@@ -1,19 +1,26 @@
-name: Hello World
+name: Hello World # this is an create pipeline name 
 
+#this is an events to trigger the pipeline 
 on: 
   push:
     branches:
       - master  # Make sure this matches your branch name (e.g., 'main' or 'master')
   workflow_dispatch:  # Allows manual trigger
+#the event is whenever we push code on master/ Production branch 
+  
 
 jobs:
-  say-hello:
-    runs-on: ubuntu-latest
+  say-hello:  #this is an name of the job 
+    runs-on: ubuntu-latest  # this is an define the env 
     steps:
     
-
+      #this is an step number 1
       - name: Print Hello World
         run: echo "Hello, World!"
-     
+
+      #this is an step number 1
       - name : Print current date
         run : date  
+
+      - name : list of files 
+        run :   ls -l 
