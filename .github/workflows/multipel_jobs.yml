@@ -1,32 +1,27 @@
-name: hello world 
-
+name: hello world
 
 on: 
-   push: 
-     branches : 
-        - master
-        - test 
-   workflow_dispatch: 
+  push: 
+    branches: 
+      - master
+      - test 
+  pull_request: 
+    branches: 
+      - master
+      - test 
+  workflow_dispatch:  # Keep this if you want manual runs
 
-
-   pull_request: 
-      branches : 
-        - master
-        - test 
-   
-
-
-jobs :
+jobs:
   on-push:
-      if: github.event_name == 'push'
-      runs-on: ubuntu-latest
-      steps : 
-           - name : print hello Radha
-             run : echo "hello Radha"
+    if: github.event_name == 'push'  # Fix condition
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello Radha
+        run: echo "hello Radha"
 
-  on-pull_request :
-     if: github.event_name == 'pull'
-     runs-on : ubuntu-latest
-     steps :
-        - name : print hello Sushant 
-          run : echo "hello Sushant"          
+  on-pull_request:
+    if: github.event_name == 'pull_request'  # Fix condition
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello Sushant
+        run: echo "hello Sushant"
