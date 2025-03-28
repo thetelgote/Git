@@ -18,13 +18,15 @@ on:
 
 jobs :
   on-push:
-    runs-on: ubuntu-latest
-    steps : 
-       - name : print hello Radha
-         run : echo "hello Radha"
+      if: github.event_name == 'push'
+      runs-on: ubuntu-latest
+      steps : 
+           - name : print hello Radha
+             run : echo "hello Radha"
 
   on-pull_request :
-    runs-on : ubuntu-latest
-    steps :
+     if: github.event_name == 'pull'
+     runs-on : ubuntu-latest
+     steps :
         - name : print hello Sushant 
           run : echo "hello Sushant"          
