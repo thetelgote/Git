@@ -1,0 +1,30 @@
+name: hello world 
+
+
+on: 
+   push: 
+     branches : 
+        - master
+        - test 
+   workflow_dispatch: 
+
+
+   pull_request: 
+      branches : 
+        - master
+        - test 
+   
+
+
+jobs :
+  on-push:
+    runs-on: ubuntu-latest
+    steps : 
+       - name : print hello Radha
+         run : echo "hello Radha"
+
+  on-pull_request :
+    runs-on : ubuntu-latest
+    steps :
+        - name : print hello Sushant 
+          run : echo "hello Sushant"          
