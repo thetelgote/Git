@@ -24,3 +24,9 @@ jobs:
 
       - name : list of files 
         run :   ls -l 
+      
+      - name : check the disk free
+        run : df -m
+
+      - name : check the disk usage 
+        run : du -m
