@@ -1,4 +1,4 @@
-name: hello world
+name: Sushant_Pipeline
 
 on: 
   push: 
@@ -11,7 +11,10 @@ on:
       - test 
   workflow_dispatch:  # Keep this if you want manual runs
 
+
 jobs:
+
+ #this is an Job 1....
   on-push:
     if: github.event_name == 'push'  # Fix condition
     runs-on: ubuntu-latest
@@ -19,9 +22,13 @@ jobs:
       - name: Print hello Radha
         run: echo "hello Radha"
 
+
+#this is an Job 2 ....
   on-pull_request:
     if: github.event_name == 'pull_request'  # Fix condition
     runs-on: ubuntu-latest
     steps:
       - name: Print hello Sushant
         run: echo "hello Sushant"
+
+        
