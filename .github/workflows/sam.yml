@@ -10,8 +10,10 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    
 
       - name: Print Hello World
         run: echo "Hello, World!"
+     
+      - name : Print current date
+        run : date  
